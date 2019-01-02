@@ -1,6 +1,7 @@
 package io.yves.ppmtool.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
@@ -38,6 +39,7 @@ public class Project {
     private Date updated_at;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "project")
+    @JsonIgnore
     private Backlog backlog;
 
     public Project() {
