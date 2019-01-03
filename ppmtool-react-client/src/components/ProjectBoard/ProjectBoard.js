@@ -6,6 +6,20 @@ import PropTypes from 'prop-types';
 import { getBacklog } from '../../actions/backlogActions';
  
 class ProjectBoard extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+
+        };
+    }
+
+    componentDidMount() {
+        const {id} = this.props.match.params;
+        this.props.getBacklog(id);
+    }
+
     render() {
         const {id} = this.props.match.params;
         return (
