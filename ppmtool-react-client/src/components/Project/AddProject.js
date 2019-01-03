@@ -62,7 +62,7 @@ class AddProject extends Component {
                                 </div>
                                 <p>{errors.projectName}</p>
                                 <div className="form-group">
-                                    <input type="text" className="form-control form-control-lg" placeholder="Unique Project ID"
+                                    <input type="text" className="form-control form-control-lg" placeholder="Unique Project ID 4-5 characters"
                                         name="projectIdentifier"
                                         value={this.state.projectIdentifier}
                                         onChange={this.onChange}/>

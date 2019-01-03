@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'; 
 import Backlog from './Backlog';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getBacklog } from '../../actions/backlogActions';
  
 class ProjectBoard extends Component {
     render() {
@@ -18,4 +21,13 @@ class ProjectBoard extends Component {
     }
 }
 
-export default ProjectBoard;
+ProjectBoard.propTypes = {
+    getBacklog: PropTypes.func.isRequired,
+    backlog: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    backlog: state.backlog
+});
+
+export default connect(mapStateToProps, {getBacklog})(ProjectBoard);
